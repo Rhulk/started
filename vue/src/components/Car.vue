@@ -1,11 +1,15 @@
 <template>
-    <h2> Car</h2>
+    <h2> Coche</h2>
+    <test/>
   
 </template>
 
 <script>
+import Test from "./Test.vue";
 export default {
-
+    components:{
+        Test,
+    }
 }
 </script>
 
