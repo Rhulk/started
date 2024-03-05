@@ -121,7 +121,21 @@ Usaremos el propiedad **.filter** para dejar fuera del array el tag a eliminar. 
 <button @click="deleteTag(tag)">X</button>
 ```
 
+Ahora vamos a implementar el borrado con la tecla de retroceso. Para ello vamos tenemos que controlar que se pulsa sobre el input, mediante **@keydown="handlekeydown"**
 
+```html
+          <input class="input" type="text" v-model="currentValue"
+           @keydown="handlekeydown">
+```
+Controlamos si se pulsa la tecla de retroceso y el valor del input esta vacio se borra el ultimo valor del array.
+```js
+    handlekeydown(e){
+
+        if (e.key == "Backspace" && this.currentValue == ""){
+            this.tags.pop();
+        }
+    },
+```
 
 
 
