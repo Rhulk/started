@@ -2,7 +2,18 @@
 
 This template should help get you started developing with Vue 3 in Vite.
 
+## Creación del proyecto
+**vue** es el nombre del proyecto
+```sh
+  Vue create vue
+```
+
 See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Cloning project with Github
+```sh
+  git clone https://github.com/Rhulk/started
+```
 
 ## Project Setup
 
