@@ -64,7 +64,7 @@ A continuación pasamos a **crear** la vista sobre la etiqueta <**template**>.
 
 La idea funcional es la siguiente, desde el **input** iremos guardando los tags en un **array** y los mostraremos con la directiva **v-for**
 
-Ahora desde el scritp del propio componente definimos el modelo de datos, el valor del input y el array.
+Ahora desde el scritp del propio componente definimos el modelo de datos, el valor del input **currentValue** y el array **tags**.
 
 ```js
 <script>
@@ -82,7 +82,30 @@ export default {
 </script>
 
 ```
+Despues creamos el apartado **methods** donde se definen los diferentes metodos que podemos usar como **handleSubmit()** aqui añadiremos el valor del input al array.
 
+```js
+  methods:{
+
+    handleSubmit(){
+        if (this.currentValue != ""){
+            const exist = this.tags.some( item => item == this.currentValue);
+            if (!exist)
+            this.tags.push(this.currentValue);
+            this.currentValue="";
+        }       
+    }
+
+
+  },
+
+```
+Ademas para que el evento funcione necesitamos asegurarnos que el form tiene el siguiente codigo que lanzara el evento.
+
+```html
+<form @submit.prevent="handleSubmit">
+```
+La clausula **.prevent** evita el comportamiento normal del submint y permite lanzar correctamente el evento anterior.
 
 
 
