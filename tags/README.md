@@ -218,6 +218,30 @@ export default {
 ```
 Con estas modificaciones podremos recuperar los valores del imput allí donde usamos el componente
 
+Ahora ya solo falta usar el componente desde App.vue 
+
+En el script importaremos el componente:
+
+```js
+<script>
+import InputTag from './components/inputTag.vue'
+
+export default {
+  components: { 
+    InputTag,
+   },
+
+```
+Ahora ya podemos usar el componente:
+
+```html
+<template>
+  <inputTag /> Input component
+</template>
+```
+
+
+
 
 
 
