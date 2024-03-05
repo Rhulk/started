@@ -107,6 +107,21 @@ Ademas para que el evento funcione necesitamos asegurarnos que el form tiene el 
 ```
 La clausula **.prevent** evita el comportamiento normal del submint y permite lanzar correctamente el evento anterior.
 
+El siguiente paso sera implementar el borrado de tag.<br> 
+Para ello crearemos el metodo **deleteTag(tag)** :
+
+```js
+    deleteTag(tag){
+        this.tags = this.tags.filter(item => item != tag);
+    },
+```
+Usaremos el propiedad **.filter** para dejar fuera del array el tag a eliminar. Y desde el **<button>** llamar al metodo anterior con el siguiente codigo:
+
+```html
+<button @click="deleteTag(tag)">X</button>
+```
+
+
 
 
 
