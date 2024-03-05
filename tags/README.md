@@ -137,6 +137,54 @@ Controlamos si se pulsa la tecla de retroceso y el valor del input esta vacio se
     },
 ```
 
+Con los siguientes estilos simulamos que los tag estan dentro del input:
+```css
+<style>
+.inputTag {
+    display: inline-flex;
+    border: solid 1px #000;
+    border-radius: 3px;
+    height: 43px;
+}
+
+.tags {
+    display: flex;
+    gap: 3px;
+    padding: 5px;
+}
+.tags .tag{
+    display: flex;
+    padding: 5px;
+    border: solid 1px #ccc;
+    gap: 5px;
+    align-content: center;
+    border-radius: 3px;
+}
+
+.inputTag .input{
+    border: none;
+    outline: none;
+    padding: 0 5px;
+}
+.inputTag form{
+    display: inline-flex;
+}
+
+.tag button{
+    background-color: transparent;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.tag button:hover{
+    background-color: #ccc;
+}
+
+</style>
+```
+
+
+
 
 
 
