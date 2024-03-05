@@ -182,9 +182,41 @@ Con los siguientes estilos simulamos que los tag estan dentro del input:
 
 </style>
 ```
+Por ultimo falta implementar la  gestión del componente, para ello añadiremos las siguientes modificaciones:
 
+**emits: ["onTagsChange"],**
+```js
+<script>
+export default {
+    emits: ["onTagsChange"],
+    data() {
+...
+```
+**this.$emit('onTagsChange',this.tags);**
+```js
+    deleteTag(tag){
+        this.tags = this.tags.filter(item => item != tag);
+        this.$emit('onTagsChange',this.tags);
+    },
+     
+    handlekeydown(e){
 
-
+        if (e.key == "Backspace" && this.currentValue == ""){
+            this.tags.pop();
+            this.$emit('onTagsChange',this.tags);
+        }
+    },
+    handleSubmit(){
+        if (this.currentValue != ""){
+            const exist = this.tags.some( item => item == this.currentValue);
+            if (!exist)
+            this.tags.push(this.currentValue);
+            this.currentValue="";
+            this.$emit('onTagsChange',this.tags);
+        }       
+    }
+```
+Con estas modificaciones podremos recuperar los valores del imput allí donde usamos el componente
 
 
 
