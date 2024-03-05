@@ -239,6 +239,24 @@ Ahora ya podemos usar el componente:
   <inputTag /> Input component
 </template>
 ```
+Pero para poder recuperar los datos del input necesitamos hacer algo mas, **@onTagsChange="handleOnTagsChange"** este es el metodo que hemos definido en el componente para recuperar los tag
+
+```html
+<inputTag @onTagsChange="handleOnTagsChange"/> Input component
+```
+
+Y este es el metodo donde recuperaremos los tag:
+
+```js
+  methods:{
+    handleOnTagsChange(tags){
+      console.log(tags)
+    },
+  },
+````
+
+
+
 
 
 
