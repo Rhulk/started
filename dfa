@@ -1,0 +1,162 @@
+[33mcommit a9fe0a9a783fc51e1aaf940c16c53b2697a580bf[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: rhulk <quique1904@gmail.com>
+Date:   Thu Mar 7 23:04:15 2024 +0100
+
+    Revert "Grag and drop inicial"
+    
+    This reverts commit e8a78b14be9714dae0a4decbea52a96fabcd785c.
+
+[33mcommit edaa19c49f731a1b6e0556878abaab220e9c3fd4[m
+Author: rhulk <quique1904@gmail.com>
+Date:   Thu Mar 7 22:57:58 2024 +0100
+
+    Revert "Update README.md"
+    
+    This reverts commit 572f1d9e4ae35d49595036497767403b62621733.
+
+[33mcommit 71c00129971ae7999aa2b741d1879d0cfc8dd1fa[m
+Author: rhulk <quique1904@gmail.com>
+Date:   Thu Mar 7 21:02:07 2024 +0100
+
+    clean 2
+
+[33mcommit 7c3cff451753694c69f244cb30bdee376a7afcd0[m
+Author: rhulk <quique1904@gmail.com>
+Date:   Thu Mar 7 20:57:20 2024 +0100
+
+    clean
+
+[33mcommit dfd6e2bbca3d4998e4a3284bfeb031bfbadb7add[m
+Author: rhulk <quique1904@gmail.com>
+Date:   Thu Mar 7 20:52:31 2024 +0100
+
+    clean
+
+[33mcommit 9c79b8d25b399a07047670e4e3f504748c7d62f9[m
+Author: rhulk <quique1904@gmail.com>
+Date:   Thu Mar 7 20:46:47 2024 +0100
+
+    pinche
+
+[33mcommit b2cafe5a36ba6283662df82c0a001c45ebf44e0f[m
+Author: rhulk <quique1904@gmail.com>
+Date:   Thu Mar 7 12:25:30 2024 +0100
+
+    sincronización projects
+
+[33mcommit 7ec1b0ed4bb2378779074e69a98ebb86e8e4175f[m
+Author: rhulk <quique1904@gmail.com>
+Date:   Thu Mar 7 12:08:04 2024 +0100
+
+    Change project
+
+[33mcommit 6adb100e320ee3f5f264069337f90ebba577796c[m
+Merge: e8a78b14 572f1d9e
+Author: rhulk <quique1904@gmail.com>
+Date:   Thu Mar 7 11:52:31 2024 +0100
+
+    Merge branch 'main' of https://github.com/Rhulk/started into main
+
+[33mcommit e8a78b14be9714dae0a4decbea52a96fabcd785c[m
+Author: rhulk <quique1904@gmail.com>
+Date:   Thu Mar 7 11:52:07 2024 +0100
+
+    Grag and drop inicial
+
+[33mcommit 572f1d9e4ae35d49595036497767403b62621733[m
+Author: Rhulk <quique1904@gmail.com>
+Date:   Tue Mar 5 23:03:59 2024 +0100
+
+    Update README.md
+
+[33mcommit 19449f5119388551ad777066d87862d5b689306c[m
+Author: Rhulk <quique1904@gmail.com>
+Date:   Tue Mar 5 22:52:58 2024 +0100
+
+    Update README.md
+    
+    Documentación del componente
+
+[33mcommit 14822d532cd12d62ffd1379c504fbb1a9f3bd36c[m
+Author: Rhulk <quique1904@gmail.com>
+Date:   Tue Mar 5 22:51:38 2024 +0100
+
+    Update README.md
+
+[33mcommit d9acfb5d3152a0d3862a90a7b05d8a1fce8df440[m
+Author: Rhulk <quique1904@gmail.com>
+Date:   Tue Mar 5 22:41:43 2024 +0100
+
+    Update README.md
+
+[33mcommit 76cf5ac82e56638530e4d589b1d2ff8a2007838e[m
+Author: Rhulk <quique1904@gmail.com>
+Date:   Tue Mar 5 20:57:51 2024 +0100
+
+    Update README.md
+
+[33mcommit af436260d3d1b20c5eeee49ffe620782a1737b6f[m
+Author: Rhulk <quique1904@gmail.com>
+Date:   Tue Mar 5 20:40:52 2024 +0100
+
+    Update README.md
+
+[33mcommit 685e7845f503b9e79467d2578493e16dcb1cc4d9[m
+Author: Rhulk <quique1904@gmail.com>
+Date:   Tue Mar 5 20:35:40 2024 +0100
+
+    Update README.md
+
+[33mcommit 060d12d139ca36d9b9df963f4a13d77581a38c2e[m
+Author: Rhulk <quique1904@gmail.com>
+Date:   Tue Mar 5 20:06:33 2024 +0100
+
+    Update README.md
+
+[33mcommit 17a1808756a588974b6ae8cf2883c7bae3867c3c[m
+Author: Rhulk <quique1904@gmail.com>
+Date:   Tue Mar 5 17:57:27 2024 +0100
+
+    Update README.md
+
+[33mcommit 7764ffa71b6a5eb51b61c670a60eb267adba7416[m
+Author: Rhulk <quique1904@gmail.com>
+Date:   Tue Mar 5 17:47:14 2024 +0100
+
+    Update README.md
+
+[33mcommit ea760c352f034adcdfe9b7ddcd78f05e7247679b[m
+Author: rhulk <quique1904@gmail.com>
+Date:   Tue Mar 5 17:01:49 2024 +0100
+
+    Componente Input tag
+
+[33mcommit 281e0fbeaf39b6f298c959e84787f23fbc26024b[m
+Author: rhulk <quique1904@gmail.com>
+Date:   Mon Mar 4 21:51:46 2024 +0100
+
+    Carga inicial
+
+[33mcommit a79986aed819f0e1e11566d3d40611f9806aaf79[m
+Author: rhulk <quique1904@gmail.com>
+Date:   Mon Mar 4 21:26:56 2024 +0100
+
+    Test component
+
+[33mcommit ab42c3bcc5683309ef6fc2766fc8b87ad8a5c4a3[m
+Author: rhulk <quique1904@gmail.com>
+Date:   Mon Mar 4 21:17:56 2024 +0100
+
+    Prueba componestes
+
+[33mcommit f000a5653a23758aef837aa475c2ed4cbdf4ffe9[m
+Author: rhulk <quique1904@gmail.com>
+Date:   Mon Mar 4 17:12:24 2024 +0100
+
+    inicial
+
+[33mcommit 0d4012efe580f98edb5de0c913e162cc4f77212e[m
+Author: Rhulk <quique1904@gmail.com>
+Date:   Mon Mar 4 16:54:15 2024 +0100
+
+    Initial commit
