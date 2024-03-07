@@ -28,7 +28,6 @@ export default {
 
     deleteTag(tag){
         this.tags = this.tags.filter(item => item != tag);
-        //this.onTagsChange(this.tags);
         this.$emit('onTagsChange',this.tags);
     },
      
@@ -36,7 +35,6 @@ export default {
 
         if (e.key == "Backspace" && this.currentValue == ""){
             this.tags.pop();
-            //this.onTagsChange(this.tags);
             this.$emit('onTagsChange',this.tags);
         }
     },
@@ -46,7 +44,6 @@ export default {
             if (!exist)
             this.tags.push(this.currentValue);
             this.currentValue="";
-            //this.onTagsChange(this.tags);
             this.$emit('onTagsChange',this.tags);
         }       
     }
