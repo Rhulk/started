@@ -27,3 +27,8 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### clean project
+
+Borramos los elementos creados de ejemplo para partir de cero.
+
