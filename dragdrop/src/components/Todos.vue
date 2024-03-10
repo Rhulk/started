@@ -33,6 +33,26 @@ function createNewBoard(){
   }   
 }
 
+function startDrag(evt, boardId, itemId) {
+  console.log(boardId, itemId);
+  evt.dataTransfer.dropEffect = "move";
+  evt.dataTransfer.effectAllowed = "move";
+  evt.dataTransfer.setData("item", JSON.stringify({ boardId, itemId }));
+}
+function onDrop(evt, boarDest) {
+    // Recuperados los id's del board e item del evt.dataTransfer
+  const { boardId, itemId } = JSON.parse(evt.dataTransfer.getData("item"));
+  console.log({ boardId, itemId });
+  //Se recuperan los objetos de los id's
+  const board = boards.find((x) => x.id === boardId);
+  const item = board.items.find((x) => x.id === itemId);
+  console.log(board,item);
+  // con filter quitamos el item de su board actual
+  board.items = board.items.filter((x) => x.id !== item.id);
+  // añadimos el item al nuevo board
+  boarDest.items.push({ ...item });
+}
+
 </script>
 <template>
 
@@ -47,6 +67,9 @@ function createNewBoard(){
 
         <div class="boards">
             <div class="board"
+                @drop="onDrop($event, board)"
+                @dragover.prevent
+                @dragenter.prevent
                 v-for="board in boards" :key="board.id"
             >
                 {{ board.name }}
@@ -55,7 +78,9 @@ function createNewBoard(){
                 </div>
                 <div class="items">
                     <div class="item"
-                    v-for="item in board.items" :key="item.id"
+                        draggable="true"
+                        @dragstart="startDrag($event, board.id, item.id)"
+                        v-for="item in board.items" :key="item.id"
                 >
                 {{ item.title }}
                 </div>

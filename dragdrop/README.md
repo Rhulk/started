@@ -160,19 +160,17 @@ Tambien para lograr separar los item usaremos la clase **.items** y le aplicarem
 
 Ahora implementamos la creación de nuevos tableros, para ello aplicamos al enlace del **na** **@click="createNewBoard"** y desde dicho metodo recuperaremos el nuevo nombre y lo añadimos al listado de objetos.
 
-
 ```html
-        <nav>
-            <ul>
-                <li><a href="#"  @click="createNewBoard"
-                     >Create Board</a> </li>
-            </ul>
-        </nav>
+<nav>
+  <ul>
+    <li><a href="#" @click="createNewBoard">Create Board</a></li>
+  </ul>
+</nav>
 ```
 
 ```js
-function createNewBoard(){
-    const name = prompt("Name of board");
+function createNewBoard() {
+  const name = prompt("Name of board");
   if (name) {
     const board = {
       id: crypto.randomUUID(),
@@ -181,7 +179,44 @@ function createNewBoard(){
     };
 
     boards.push(board);
-  }   
+  }
 }
 ```
 
+Para añadir la funcionalidad drag and drop lo primero es activar la propiedad en los item de **graggable=true** de este modo podemos estraer el item fuera del board en el que se encuentre.
+
+Despues creamos el metodo que recuperar los datos del item y del board a extraer **@dragstart="startDrag($event, board.id, item.id)"**
+
+```js
+function startDrag(evt, boardId, itemId) {
+  console.log(boardId, itemId);
+  evt.dataTransfer.dropEffect = "move";
+  evt.dataTransfer.effectAllowed = "move";
+  evt.dataTransfer.setData("item", JSON.stringify({ boardId, itemId }));
+}
+```
+
+En dicho metodo con **evt.dataTransfer.setData...** almacenamos en un **json** los id's con el nombre de "item"
+
+Posteriormente creamos el metodo **@drop="onDrop($event, board)"** en el board
+que nos va permitir recuperar el json "item" guardado anteriormente con **const { boardId, itemId } = JSON.parse(evt.dataTransfer.getData("item"));**
+
+Despues recuperamos los objetos con la propiedad **.find** y por ultimo **.filter** quitamos el item de su board anterior para añadirlo con **..push** al nuevo. Aquí el metodo al completo:
+
+```js
+function onDrop(evt, boarDest) {
+  // Recuperados los id's del board e item del evt.dataTransfer
+  const { boardId, itemId } = JSON.parse(evt.dataTransfer.getData("item"));
+  console.log({ boardId, itemId });
+  //Se recuperan los objetos de los id's
+  const board = boards.find((x) => x.id === boardId);
+  const item = board.items.find((x) => x.id === itemId);
+  console.log(board, item);
+  // con filter quitamos el item de su board actual
+  board.items = board.items.filter((x) => x.id !== item.id);
+  // añadimos el item al nuevo board
+  boarDest.items.push({ ...item });
+}
+```
+
+Con esto ya tendriamos el drag and drop completado.
