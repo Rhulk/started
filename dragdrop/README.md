@@ -32,10 +32,9 @@ npm run build
 
 Borramos los elementos creados de ejemplo para partir de cero.
 
-
 ### Proyecto construido con el patrón componente API
 
-Lo primero crear el componente **Todo.vue**  y lo vinculamos al app principal.
+Lo primero crear el componente **Todo.vue** y lo vinculamos al app principal.
 
 Ahora vamos a crear una variable reactiva. con **reactive()**
 
@@ -43,7 +42,7 @@ Ahora vamos a crear una variable reactiva. con **reactive()**
 // import necesarios para la reactividad
 import { onMounted, ref, reactive } from "vue";
 
-// objeto reactivo 
+// objeto reactivo
 let boards = reactive([
   {
     id: crypto.randomUUID(),
@@ -90,41 +89,39 @@ Y este seria el ejemplo de uso:
 ```
 
 ```js
-function handleNewItem(text, board){
-    board.items.push(
-        { id: crypto.randomUUID(),title: text.value }
-    )
+function handleNewItem(text, board) {
+  board.items.push({ id: crypto.randomUUID(), title: text.value });
 }
 ```
+
 Así seria como utilizaremos el componente **<InputNew/>** recuperamos el valor del input que esta en la variable **text** que recuperamos con el **emit** y el objeto **board** correspondiente que veremos acontinuación como lo recuperamos.
 
 Ahora definimos la estructura basica de la vista o template.
 
 ```html
-    <div class="boards-container">
-        <nav>
-            <ul>
-                <li><a href="#" >Create Board</a> </li>
-            </ul>
-        </nav>
+<div class="boards-container">
+  <nav>
+    <ul>
+      <li><a href="#">Create Board</a></li>
+    </ul>
+  </nav>
 
-        <div class="boards">
-            <div class="board"
-                v-for="board in boards" :key="board.id"
-            >
-                {{ board.name }}
-                <div class="input">
-                    <InputNew @on-new-item="(text) => handleNewItem(text, board)" />
-                </div>
-                <div class="item"
-                    v-for="item in board.items" :key="item.id"
-                >
-                {{ item.title }}
-                </div>
-            </div>
+  <div class="boards">
+    <div class="board" v-for="board in boards" :key="board.id">
+      {{ board.name }}
+      <div class="input">
+        <InputNew @on-new-item="(text) => handleNewItem(text, board)" />
+      </div>
+      <div class="items">
+        <div class="item" v-for="item in board.items" :key="item.id">
+          {{ item.title }}
         </div>
+      </div>
     </div>
+  </div>
+</div>
 ```
+
 Se define de la siguiente manera, un contenedor principal **boards-container** que se divide en 2 un **nav** que contine un enlace para la creación de nuevos **boards** el cual ya veremos como lo hacemos y el contenedor de **boards**
 
 Este contenedor se divide tambien en 2 nuevos contenedores:
@@ -142,4 +139,49 @@ Con la misma teoria aplicamos un fondo blanco a los **.item** para resaltarlos s
 
 Tambien para lograr separar los item usaremos la clase **.items** y le aplicaremos un **display: flex** **flex-direction: colum** y el **gap** de 5 pixel.
 
+```css
+.boards {
+  display: flex;
+  gap: 10px;
+}
+.board {
+  background: #ccc;
+  padding: 10px;
+}
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.item {
+  background: rgb(232, 227, 227);
+}
+```
+
+Ahora implementamos la creación de nuevos tableros, para ello aplicamos al enlace del **na** **@click="createNewBoard"** y desde dicho metodo recuperaremos el nuevo nombre y lo añadimos al listado de objetos.
+
+
+```html
+        <nav>
+            <ul>
+                <li><a href="#"  @click="createNewBoard"
+                     >Create Board</a> </li>
+            </ul>
+        </nav>
+```
+
+```js
+function createNewBoard(){
+    const name = prompt("Name of board");
+  if (name) {
+    const board = {
+      id: crypto.randomUUID(),
+      name: name,
+      items: [],
+    };
+
+    boards.push(board);
+  }   
+}
+```
 

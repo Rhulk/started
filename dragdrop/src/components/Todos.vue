@@ -20,6 +20,18 @@ function handleNewItem(text, board){
         { id: crypto.randomUUID(),title: text.value }
     )
 }
+function createNewBoard(){
+    const name = prompt("Name of board");
+  if (name) {
+    const board = {
+      id: crypto.randomUUID(),
+      name: name,
+      items: [],
+    };
+
+    boards.push(board);
+  }   
+}
 
 </script>
 <template>
@@ -28,7 +40,8 @@ function handleNewItem(text, board){
     <div class="boards-container">
         <nav>
             <ul>
-                <li><a href="#" >Create Board</a> </li>
+                <li><a href="#"  @click="createNewBoard"
+                     >Create Board</a> </li>
             </ul>
         </nav>
 
