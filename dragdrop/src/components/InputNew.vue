@@ -15,4 +15,12 @@ function handleKeyDown(evt) {
 <template>
 New todo: <input v-model="text" @keydown="handleKeyDown" /></template>
 
-<style scoped></style>
+<style scoped>
+input {
+    width: 100%;
+    box-sizing: border-box;
+}
+form {
+    margin-bottom: 10px;
+}
+</style>
